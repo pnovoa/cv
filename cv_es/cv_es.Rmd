@@ -1,0 +1,143 @@
+---
+name: Pavel
+surname: Novoa Hernández
+profilepic: image.jpg
+position: "Professor"
+address: "Escuela de Ciencias Empresariales, Universidad Católica del Norte"
+phone: +56 9 20368604
+www: "www.eciem.cl/academico/29/PAVEL-NOVOA-HERNANDEZ"
+email: "pavel.novoa@ucn.cl"
+orcid: 0000-0003-3267-6753
+researchgate: "Pavel-Novoa-Hernandez"
+github: pnovoa
+publons: 2470636
+linkedin: "pavel-novoa-hernández-61879027"
+googlescholar: WACiKp0AAAAJ
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(dplyr)
+```
+
+# Some stuff about me
+
+ * I poisoned myself doing research.
+ * I was the first woman to win a Nobel prize
+ * I was the first person and only woman to win a Nobel prize in two different sciences.
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
+  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
+  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Nobel Prizes
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+) %>% 
+  brief_entries(
+    glue::glue("Nobel Prize in {Type}"),
+    Year, 
+    Desc
+  )
+```
+
+# Artículos de revista
+
+## Artículos JCR
+```{r}
+
+bibliography_entries("../jcr_articles.bib") %>%
+  arrange(desc(issued))
+```
+
+## Artículos Scopus
+```{r}
+
+bibliography_entries("../scopus_articles.bib") %>%
+  arrange(desc(issued))
+```
+
+## Artículos indexados en otras bases de datos
+```{r}
+
+bibliography_entries("../other_articles.bib") %>%
+  arrange(desc(issued))
+```
+
+# Trabajos presentados en congresos y conferencias
+
+## Trabajos indexados por Scopus
+```{r}
+
+bibliography_entries("../scopus_proceedings.bib") %>%
+  arrange(desc(issued))
+```
+
+## No indexados por Scopus
+```{r}
+
+bibliography_entries("../other_proceedings.bib") %>%
+  arrange(desc(issued))
+```
+
+
+# Libros, tesis y capítulos de libros
+
+## Libros y tesis
+```{r}
+
+bibliography_entries("../books.bib") %>%
+  arrange(desc(issued))
+```
+
+## Capítulos de libro (indexados por Scopus)
+```{r}
+
+bibliography_entries("../book_chapters.bib") %>%
+  arrange(desc(issued))
+```
+
+
+# Posgrado
+
+## Claustros de maestrías
+
+## Cursos de posgrado impartidos
+
+## Tesis de maestría dirigidas
+
+```{r}
+
+bibliography_entries("../ms_theses.bib") %>%
+  arrange(desc(issued))
+```
+
+## Tesis de doctorado dirigidas
+
+
+# Proyectos
+
+## Proyectos de vinculación con el medio
+
+## Proyectos de investigación
+
+## Proyectos institucionales de docencia
+
+
+# Referencias
