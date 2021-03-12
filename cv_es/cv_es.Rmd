@@ -24,13 +24,13 @@ library(tibble)
 library(dplyr)
 ```
 
-# Some stuff about me
+# Biografía
 
- * I poisoned myself doing research.
- * I was the first woman to win a Nobel prize
- * I was the first person and only woman to win a Nobel prize in two different sciences.
+ * Algo
+ * Algo2
+ * Algo3
 
-# Education
+# Educación
 
 ```{r}
 tribble(
@@ -42,7 +42,7 @@ tribble(
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
-# Nobel Prizes
+# Premios y reconocimientos
 
 ```{r}
 tribble(
